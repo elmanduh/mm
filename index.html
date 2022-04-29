@@ -2,9 +2,17 @@
 <html>
 <body>
     <h1 id="demo"></h1>
-    <script type="text/javascript"></script>
-    <script src="js/cordova.js"></script>
-    <script src="js/index.js"></script>
-    <script>app.initialize();</script>
+ <script>
+var navigator_info = window.navigator;
+var screen_info = window.screen;
+var uid = navigator_info.mimeTypes.length;
+uid += navigator_info.userAgent.replace(/\D+/g, '');
+uid += navigator_info.plugins.length;
+uid += screen_info.height || '';
+uid += screen_info.width || '';
+uid += screen_info.pixelDepth || '';
+console.log(uid);
+document.write(uid);
+</script>
 </body>
 </html>
